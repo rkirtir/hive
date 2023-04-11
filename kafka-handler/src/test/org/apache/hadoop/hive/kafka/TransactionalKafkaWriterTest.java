@@ -37,7 +37,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.Ignore;
+
 import org.junit.rules.TemporaryFolder;
 import org.mockito.Mockito;
 
@@ -58,7 +58,7 @@ import java.util.stream.IntStream;
 /**
  * Test Transactional Writer.
  */
-@org.junit.Ignore("HIVE-24771")
+
 public class TransactionalKafkaWriterTest {
 
   private static final String TOPIC = "TOPIC_TEST";
@@ -204,7 +204,7 @@ public class TransactionalKafkaWriterTest {
     checkData();
   }
 
-  @Ignore("HIVE-23400 flaky")
+
   @Test(expected = IOException.class) public void writerFencedOut() throws IOException {
     TransactionalKafkaWriter
         writer =
