@@ -1,4 +1,3 @@
---! qt:disabled:HIVE-25379
 --! qt:dataset:src
 
 set hive.strict.checks.cartesian.product= false;
