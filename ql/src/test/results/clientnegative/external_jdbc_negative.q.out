@@ -35,12 +35,12 @@ TBLPROPERTIES (
                 "hive.sql.database.type" = "DERBY",
                 "hive.sql.jdbc.driver" = "org.apache.derby.jdbc.EmbeddedDriver",
 #### A masked pattern was here ####
-                "hive.sql.dbcp.username" = "user1",
-                "hive.sql.dbcp.password" = "passwd1",
+                "hive.sql.dbcp.username" = "App",
+                "hive.sql.dbcp.password" = "mine",
                 "hive.sql.table" = "EXTERNAL_JDBC_NEGATIVE_TABLE1",
                 "hive.sql.dbcp.maxActive" = "1"
 )
 PREHOOK: type: CREATETABLE
 PREHOOK: Output: database:default
 PREHOOK: Output: default@db1_ext_negative1
-FAILED: Execution Error, return code 40000 from org.apache.hadoop.hive.ql.ddl.DDLTask. java.lang.RuntimeException: MetaException(message:org.apache.hadoop.hive.serde2.SerDeException Caught exception while initializing the SqlSerDe: Column numbers do not match. Remote table columns are [ikey] and declared table columns in Hive external table are [ikey, bkey])
+FAILED: Execution Error, return code 40000 from org.apache.hadoop.hive.ql.ddl.DDLTask. java.lang.RuntimeException: MetaException(message:org.apache.hadoop.hive.serde2.SerDeException Caught exception while initializing the SqlSerDe: Caught exception while trying to get columns: Table/View 'EXTERNAL_JDBC_NEGATIVE_TABLE1' does not exist.)

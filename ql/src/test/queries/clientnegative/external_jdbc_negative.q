@@ -1,5 +1,4 @@
 --! qt:dataset:src
-set user.name=user1;
 CREATE TEMPORARY FUNCTION dboutput AS 'org.apache.hadoop.hive.contrib.genericudf.example.GenericUDFDBOutput';
 
 FROM src
@@ -19,9 +18,9 @@ STORED BY 'org.apache.hive.storage.jdbc.JdbcStorageHandler'
 TBLPROPERTIES (
                 "hive.sql.database.type" = "DERBY",
                 "hive.sql.jdbc.driver" = "org.apache.derby.jdbc.EmbeddedDriver",
-                "hive.sql.jdbc.url" = "jdbc:derby:;databaseName=${system:test.tmp.dir}/test_derby_negative;collation=TERRITORY_BASED:PRIMARY",
-                "hive.sql.dbcp.username" = "user1",
-                "hive.sql.dbcp.password" = "passwd1",
+                "hive.sql.jdbc.url" = "jdbc:derby:;databaseName=${system:test.tmp.dir}/test_derby_negative;create=true;collation=TERRITORY_BASED:PRIMARY",
+                "hive.sql.dbcp.username" = "App",
+                "hive.sql.dbcp.password" = "mine",
                 "hive.sql.table" = "EXTERNAL_JDBC_NEGATIVE_TABLE1",
                 "hive.sql.dbcp.maxActive" = "1"
 );
